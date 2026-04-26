@@ -22,6 +22,7 @@ const Sidebar = () => {
               <nav className="flex flex-col mt-4 ">
                 <NavLink
                   to="/dashboard"
+                  end
                   className={({ isActive }) =>
                     `py-1 px-2 text-sm font-syne font-bold rounded-lg hover:bg-bg3 ${
                       isActive
@@ -33,7 +34,7 @@ const Sidebar = () => {
                   Dashboard
                 </NavLink>
                 <NavLink
-                  to="/analytics"
+                  to="/dashboard/analytics"
                   className={({ isActive }) =>
                     `py-1 px-2 text-sm font-syne font-bold rounded-lg hover:bg-bg3 ${
                       isActive
@@ -45,7 +46,7 @@ const Sidebar = () => {
                   Analytics
                 </NavLink>
                 <NavLink
-                  to="/addsubscription"
+                  to="/dashboard/addsubscription"
                   className={({ isActive }) =>
                     `py-1 px-2 text-sm font-syne font-bold rounded-lg hover:bg-bg3 ${
                       isActive
@@ -57,7 +58,7 @@ const Sidebar = () => {
                   Add New
                 </NavLink>
                 <NavLink
-                  to="/settings"
+                  to="/dashboard/settings"
                   className={({ isActive }) =>
                     `py-1 px-2 text-sm font-syne font-bold rounded-lg hover:bg-bg3 ${
                       isActive

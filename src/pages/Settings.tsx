@@ -1,9 +1,13 @@
 import { useState } from "react";
 import { useCurrencyContext } from "../context/CurrencyContext";
+import { useTheme } from "../context/ThemeContext";
+import { useNotificationContext } from "../context/NotificationContext";
 const Settings = () => {
   const { setCurrency, currency } = useCurrencyContext();
   const [toggleNotif, setToggleNotif] = useState(false);
-  const [toggleTheme, setToggleTheme] = useState(false);
+  const { toggleTheme, theme } = useTheme();
+  const { notificationsEnabled, toggleNotifications } =
+    useNotificationContext();
   return (
     <>
       <section className="px-4 py-6">
@@ -60,13 +64,13 @@ const Settings = () => {
                   <p>Renewal reminders</p>
                   <div>
                     <div
-                      onClick={() => setToggleNotif(!toggleNotif)}
+                      onClick={toggleNotifications}
                       className={`w-14 h-7 flex items-center rounded-full p-1 cursor-pointer transition
-        ${toggleNotif ? "bg-accent" : "bg-purple/5 border-[1px] border-purple"}`}
+        ${notificationsEnabled ? "bg-accent" : "bg-purple/5 border-[1px] border-purple"}`}
                     >
                       <div
                         className={`w-6 h-6  rounded-full shadow-md transform transition
-          ${toggleNotif ? "translate-x-6 bg-black" : "translate-x-0 bg-purple "}`}
+          ${notificationsEnabled ? "translate-x-6 bg-black" : "translate-x-0 bg-purple "}`}
                       />
                     </div>
                   </div>
@@ -81,13 +85,13 @@ const Settings = () => {
                 <div className=" flex justify-between flex-1">
                   <p className="font-Syne text-text2 ">Dark Mode</p>
                   <div
-                    onClick={() => setToggleTheme(!toggleTheme)}
+                    onClick={toggleTheme}
                     className={`w-14 h-7 flex items-center rounded-full p-1 cursor-pointer transition
-        ${toggleTheme ? "bg-accent" : "bg-purple/5 border-[1px] border-purple"}`}
+        ${theme === "light" ? "bg-accent" : "bg-purple/5 border-[1px] border-purple"}`}
                   >
                     <div
                       className={`w-6 h-6  rounded-full shadow-md transform transition
-          ${toggleTheme ? "translate-x-6 bg-black" : "translate-x-0 bg-purple "}`}
+           ${theme === "light" ? "translate-x-6 bg-black" : "translate-x-0 bg-purple"}`}
                     />
                   </div>
                 </div>

@@ -1,5 +1,5 @@
 import HomePage from "./pages/HomePage";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, Navigate } from "react-router-dom";
 import Dashboard from "./pages/Dashboard";
 import AnalyticsPage from "./pages/AnalyticsPage";
 import NewSubscriptions from "./pages/NewSubscriptions";
@@ -22,14 +22,18 @@ function App() {
                 <NotificationContextProvider>
                   {" "}
                   <Routes>
-                    <Route path="/" element={<HomePage />}>
-                      <Route path="/dashboard" element={<Dashboard />} />
-                      <Route path="/analytics" element={<AnalyticsPage />} />
+                    <Route
+                      path="/"
+                      element={<Navigate to="/dashboard" replace />}
+                    />
+                    <Route path="/dashboard" element={<HomePage />}>
+                      <Route index element={<Dashboard />} />
+                      <Route path="analytics" element={<AnalyticsPage />} />
                       <Route
-                        path="/addsubscription/:id?"
+                        path="addsubscription/:id?"
                         element={<NewSubscriptions />}
                       />
-                      <Route path="/settings" element={<Settings />} />
+                      <Route path="settings" element={<Settings />} />
                     </Route>
                   </Routes>
                 </NotificationContextProvider>

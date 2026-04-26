@@ -25,9 +25,25 @@
   --font-Syne: "Syne";
   --font-JetB: "JetBrains";
 }
+
 @layer base {
   body {
     background: var(--color-bg);
+  }
+  html.light {
+    --color-bg: #ffffff;
+    --color-bg2: #f5f5f8;
+    --color-bg3: #ebebf0;
+    --color-bg4: #e0e0e8;
+    --color-bg5: #d5d5e0;
+    --color-border: #d0d0dd;
+    --color-border2: #c0c0cc;
+    --color-text: #0a0a0f;
+    --color-text2: #404060;
+    --color-text3: #707090;
+    --color-accent: #0d9488;
+    --color-accent-dim: rgba(13, 148, 136, 0.12);
+    --color-accent-glow: rgba(13, 148, 136, 0.25);
   }
 }
 .homepage {

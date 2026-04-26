@@ -23,7 +23,9 @@ const StatCard = ({
         className={`border border-border rounded-lg p-4 max-w-xs bg-bg2  border-t-${borderStyle} border-2 shadow-inner`}
       >
         <h3 className="text-text2 text-xsm uppercase font-Syne">{title}</h3>
-        <p className={`font-Syne font-extrabold text-xl  text-${textStyle}`}>
+        <p
+          className={`font-Syne font-extrabold text-xl text-text  text-${textStyle}`}
+        >
           {displayValue}
         </p>
         <p className="text-text2 text-sm font-Syne">{subtitle}</p>

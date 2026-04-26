@@ -19,16 +19,16 @@ const Dashboard = () => {
             Renewing soon
           </h3>
           <div className="flex gap-8 font-Syne font-bold text-xs">
-            <button className="bg-red-400/5 border border-red rounded-lg p-2">
+            <button className="bg-red-400/5 text-text border border-red rounded-lg p-2">
               Gym <span className="text-red">Tomorrow</span>
             </button>
-            <button className="bg-red-400/5 border border-red rounded-lg p-2">
+            <button className="bg-red-400/5 text-text border border-red rounded-lg p-2">
               Notion <span className="text-red">in 3 days</span>
             </button>
-            <button className="bg-red-400/5 border border-red rounded-lg p-2">
+            <button className="bg-red-400/5 text-text border border-red rounded-lg p-2">
               Netflix <span className="text-red">in 5 days</span>
             </button>
-            <button className="bg-red-400/5 border border-red rounded-lg p-2">
+            <button className="bg-red-400/5 text-text border border-red rounded-lg p-2">
               Adobe CC <span className="text-red">in 6 days</span>
             </button>
           </div>

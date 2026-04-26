@@ -1,7 +1,7 @@
 import { useLocation } from "react-router-dom";
 import { useStatContext } from "../context/StatsContext";
 import { useCurrencyContext } from "../context/CurrencyContext";
-import { useThemeContext } from "../context/ThemeContext";
+import { useTheme } from "../context/ThemeContext";
 
 const Topbar = () => {
   const location = useLocation();
@@ -21,7 +21,7 @@ const Topbar = () => {
   };
   const { monthlySpend, annualSpend } = useStatContext();
   const { currFormat, cycleCurrency, currency, symbol } = useCurrencyContext();
-  const { toggleTheme, theme } = useThemeContext();
+  const { toggleTheme, theme } = useTheme();
 
   return (
     <>
@@ -56,7 +56,10 @@ const Topbar = () => {
                 <span> {symbol}</span>
                 <span>{currency}</span>
               </button>
-              <button onClick={toggleTheme}> {theme}</button>
+              <button onClick={toggleTheme}>
+                {" "}
+                {theme === "dark" ? "☀️ Light" : "🌙 Dark"}
+              </button>
             </div>
           </div>
         </div>

@@ -1,19 +1,19 @@
 import { useCurrencyContext } from "../context/CurrencyContext";
 import { useSubscriptionContext } from "../context/SubscriptionContext";
 
-type Subscription = {
+type SubscriptionProps = {
   id: string;
   name: string;
   amount: number;
   billingCycle: string;
   category: string;
   renewalDate: string;
-  color: string;
+  color?: string;
   logo: string;
   notes: string;
 };
 
-const SubscriptionCard = ({ data }: { data: Subscription }) => {
+const SubscriptionCard = ({ data }: { data: SubscriptionProps }) => {
   const { setSelectedSub } = useSubscriptionContext();
   const { currFormat } = useCurrencyContext();
   return (
@@ -22,7 +22,7 @@ const SubscriptionCard = ({ data }: { data: Subscription }) => {
         onClick={() => {
           setSelectedSub(data.id);
         }}
-        style={{ borderTopColor: data.color }}
+        style={{ borderTopColor: data.color ?? "#2dd4bf" }}
         className={`border border-border rounded-lg p-4 max-w-xs bg-bg2  transition-transform duration-300 ease-in-out hover:translate-y-2   border-2 shadow-inner`}
       >
         <div className="flex gap-4">
