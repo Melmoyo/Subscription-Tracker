@@ -8,40 +8,37 @@ import { SubscriptionProvider } from "./context/SubscriptionContext";
 import { FilterContextProvider } from "./context/FilterContext";
 import { StatContextProvider } from "./context/StatsContext";
 import { CurrencyContextProvider } from "./context/CurrencyContext";
-import { ThemeContextProvider } from "./context/ThemeContext";
 import { NotificationContextProvider } from "./context/NotificationContext";
 function App() {
   return (
     <>
-      <ThemeContextProvider>
-        <SubscriptionProvider>
-          <FilterContextProvider>
-            {" "}
-            <StatContextProvider>
-              <CurrencyContextProvider>
-                <NotificationContextProvider>
-                  {" "}
-                  <Routes>
+      <SubscriptionProvider>
+        <FilterContextProvider>
+          {" "}
+          <StatContextProvider>
+            <CurrencyContextProvider>
+              <NotificationContextProvider>
+                {" "}
+                <Routes>
+                  <Route
+                    path="/"
+                    element={<Navigate to="/dashboard" replace />}
+                  />
+                  <Route path="/dashboard" element={<HomePage />}>
+                    <Route index element={<Dashboard />} />
+                    <Route path="analytics" element={<AnalyticsPage />} />
                     <Route
-                      path="/"
-                      element={<Navigate to="/dashboard" replace />}
+                      path="addsubscription/:id?"
+                      element={<NewSubscriptions />}
                     />
-                    <Route path="/dashboard" element={<HomePage />}>
-                      <Route index element={<Dashboard />} />
-                      <Route path="analytics" element={<AnalyticsPage />} />
-                      <Route
-                        path="addsubscription/:id?"
-                        element={<NewSubscriptions />}
-                      />
-                      <Route path="settings" element={<Settings />} />
-                    </Route>
-                  </Routes>
-                </NotificationContextProvider>
-              </CurrencyContextProvider>
-            </StatContextProvider>
-          </FilterContextProvider>
-        </SubscriptionProvider>
-      </ThemeContextProvider>
+                    <Route path="settings" element={<Settings />} />
+                  </Route>
+                </Routes>
+              </NotificationContextProvider>
+            </CurrencyContextProvider>
+          </StatContextProvider>
+        </FilterContextProvider>
+      </SubscriptionProvider>
     </>
   );
 }

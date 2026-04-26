@@ -1,10 +1,9 @@
-import { useState } from "react";
 import { useCurrencyContext } from "../context/CurrencyContext";
 import { useTheme } from "../context/ThemeContext";
 import { useNotificationContext } from "../context/NotificationContext";
 const Settings = () => {
   const { setCurrency, currency } = useCurrencyContext();
-  const [toggleNotif, setToggleNotif] = useState(false);
+
   const { toggleTheme, theme } = useTheme();
   const { notificationsEnabled, toggleNotifications } =
     useNotificationContext();
