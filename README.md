@@ -1,73 +1,28 @@
-# React + TypeScript + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+# Subscription Tracker
+A personal finance tool to track all your recurring subscriptions, visualise your
+total spending, and stay on top of renewal dates.
+## Live Demo
+[View Live](https://melmoyo.github.io/Subscription-Tracker) | [View
+Code](https://github.com/Melmoyo/Subscription-Tracker)
+## Features
+- Add new subscriptions with name, amount, billing cycle, and due date
+- Edit or delete existing subscriptions
+- Multi-currency support — toggle between currencies (e.g. ZAR, USD, EUR)
+- Automatic calculation of total monthly spend
+- Automatic calculation of total annual spend
+- Due date visibility so you never miss a renewal
+- Data persists in localStorage — survives page refresh
+- Responsive design for mobile and desktop
+## Why I Built This
+Most people underestimate how much they spend on subscriptions because 
+the charges are spread across different billing cycles and sometimes 
+different currencies. This tool puts everything in one view — with 
+currency toggling — so you can see the real cost in whatever currency 
+makes sense to you.
+## Tech Stack
+- HTML, CSS, JavaScript (vanilla),TailwindCSS, React, TypeScript
+## Run Locally
+```bash
+git clone https://github.com/Melmoyo/Subscription-Tracker.git
+# Open index.html in your browser
 ```
