@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #0a0a0f;
+  --color-bg2: #111118;
+  --color-bg3: #18181f;
+  --color-bg4: #1f1f28;
+  --color-bg5: #252530;
+  --color-border: #2a2a38;
+  --color-border2: #3a3a4a;
+  --color-text: #e8e8f2;
+  --color-text2: #9090b0;
+  --color-text3: #5a5a78;
+  --color-accent: #2dd4bf;
+  --color-accent-dim: rgba(45, 212, 191, 0.12);
+  --color-accent-glow: rgba(45, 212, 191, 0.25);
+  --color-red: #f87171;
+  --color-orange: #fb923c;
+  --color-yellow: #fbbf24;
+  --color-green: #4ade80;
+  --color-purple: #a78bfa;
+  --color-pink: #f472b6;
+  --color-blue: #60a5fa;
+  --sidebar-w: 220px;
+  --font-Syne: "Syne";
+  --font-JetB: "JetBrains";
+}
+@layer base {
+  body {
+    background: var(--color-bg);
+  }
+}
+.homepage {
+  display: grid;
+  grid-template-columns: 220px 1fr; /* sidebar + main columns */
+  grid-template-rows: auto 1fr;
+  grid-template-areas: "sidebar topbar" "sidebar main";
+  min-height: 100vh;
+}
+.sidebar {
+  grid-area: sidebar;
+}
+.topbar {
+  grid-area: topbar;
+}
