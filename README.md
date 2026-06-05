@@ -25,7 +25,7 @@ Most people underestimate how much they spend on subscriptions because the charg
 
 ## Live Demo
 
-🔗 [View Live](https://melmoyo.github.io/Subscription-Tracker)
+🔗 [View Live](https://subsrtrack.netlify.app/dashboard)
 
 ## Getting Started
 
