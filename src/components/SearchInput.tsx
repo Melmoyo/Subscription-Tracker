@@ -14,7 +14,7 @@ const SearchInput = () => {
                 setFilters((prev) => ({ ...prev, searchInput: e.target.value }))
               }
               placeholder="Search subscriptions"
-              className="border border-border rounded-lg w-full p-2 bg-bg2"
+              className="border border-border rounded-lg w-full p-2 bg-bg2 text-black"
             />
             <select
               onChange={(e) =>
