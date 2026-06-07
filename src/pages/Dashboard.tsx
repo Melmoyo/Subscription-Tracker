@@ -66,7 +66,7 @@ const Dashboard = () => {
               variant="number"
             />
           </div>
-          <div className="flex gap-4 mt-4 text-text2 text-sm">
+          <div className="flex flex-wrap gap-4 mt-4 text-text2 text-sm">
             <button
               onClick={() =>
                 setFilters((prev) => ({
@@ -146,7 +146,7 @@ const Dashboard = () => {
           <div>
             <SearchInput />
           </div>
-          <div className="mt-4 grid grid-cols-2 md:grid-cols-3 gap-10">
+          <div className="mt-4 grid grid-cols-2 md:grid-cols-3 gap-5 md:gap-10">
             {filteredsub.map((sub) => (
               <SubscriptionCard key={sub.id} data={sub} />
             ))}
