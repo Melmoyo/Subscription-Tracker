@@ -11,7 +11,7 @@ const AnalyticsPage = () => {
     },
     {} as Record<string, number>,
   );
-  console.log(Spend);
+
   const totalSpend = subscriptions.reduce((acc, sub) => acc + sub.amount, 0);
   const categories = Object.entries(Spend).map(([name, amount]) => {
     const sample = subscriptions.find((s) => s.category === name);
@@ -31,12 +31,12 @@ const AnalyticsPage = () => {
     .map((sub) => ({
       name: sub.name,
     }));
-  console.log(annualSubscriptions);
+
   return (
     <>
       <section className="px-4 py-6">
         <div className="max-w-6xl">
-          <div className="grid grid-cols-2 gap-20 text-text2  ">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 text-text2  ">
             <div className="border rounded-lg  bg-bg2 px-4 py-6">
               <h3 className="uppercse mb-4">Spend by Category</h3>
               <div className="space-y-3">

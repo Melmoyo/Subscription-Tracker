@@ -32,7 +32,7 @@ const Dashboard = () => {
               Adobe CC <span className="text-red">in 6 days</span>
             </button>
           </div>
-          <div className="mt-4 grid grid-cols-4 gap-10 ">
+          <div className="mt-4 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-10 ">
             <StatCard
               title="Monthly Spend"
               subtitle={`${subscriptions.length} active subscriptions`}
@@ -146,7 +146,7 @@ const Dashboard = () => {
           <div>
             <SearchInput />
           </div>
-          <div className="mt-4 grid grid-cols-3 gap-10">
+          <div className="mt-4 grid grid-cols-2 md:grid-cols-3 gap-10">
             {filteredsub.map((sub) => (
               <SubscriptionCard key={sub.id} data={sub} />
             ))}

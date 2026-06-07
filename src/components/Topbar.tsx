@@ -25,42 +25,40 @@ const Topbar = () => {
 
   return (
     <>
-      <section className="bg-bg2 text-text px-4 py-4 border-b-2 border-border">
-        <div>
-          <div className="flex gap-20 justify-between">
-            <h1 className="font-Syne text-2xl font-bold">{getTitle()}</h1>
-            <div className="ml-auto flex  gap-10">
-              <div>
-                <h4 className="font-Syne uppercase text-xs text-text3">
-                  Monthly Spend
-                </h4>
-                <p className="text-accent font-bold">
-                  {currFormat(monthlySpend)}
-                </p>
-              </div>
-              <div className="w-px bg-border h-full"></div>
-              <div>
-                <h4 className="font-Syne uppercase text-xs text-text3">
-                  Annual{" "}
-                </h4>
-                <p className="text-accent font-bold">
-                  {currFormat(annualSpend)}
-                </p>
-              </div>
-
-              <div className="w-px bg-border h-full"></div>
-              <button
-                onClick={cycleCurrency}
-                className=" flex gap-2 border border-border justify-center items-center p-2 rounded-lg hover:border-accent hover:text-accent text-sm font-bold"
-              >
-                <span> {symbol}</span>
-                <span>{currency}</span>
-              </button>
-              <button onClick={toggleTheme}>
-                {" "}
-                {theme === "dark" ? "☀️ Light" : "🌙 Dark"}
-              </button>
+      <section className="bg-bg2 text-text px-4 py-4 border-b-2 border-border ">
+        <div className="flex gap-20 justify-between">
+          <h1 className="font-Syne text-2xl font-bold">{getTitle()}</h1>
+          <div className="ml-auto flex gap-4 items-center md:gap-10">
+            {/*Monthly + Annual -hidden on mobile*/}
+            <div className="hidden md:block">
+              <h4 className="font-Syne uppercase text-xs text-text3">
+                Monthly Spend
+              </h4>
+              <p className="text-accent font-bold">
+                {currFormat(monthlySpend)}
+              </p>
             </div>
+            <div className="w-px bg-border h-full hidden md:block"></div>
+            <div className="hidden md:block">
+              <h4 className="font-Syne uppercase text-xs text-text3">
+                Annual{" "}
+              </h4>
+              <p className="text-accent font-bold">{currFormat(annualSpend)}</p>
+            </div>
+
+            <div className="w-px bg-border h-full hidden md:block"></div>
+            {/*Currency + Theme*/}
+            <button
+              onClick={cycleCurrency}
+              className=" flex gap-2 border border-border justify-center items-center p-2 rounded-lg hover:border-accent hover:text-accent text-sm font-bold"
+            >
+              <span> {symbol}</span>
+              <span>{currency}</span>
+            </button>
+            <button onClick={toggleTheme}>
+              {" "}
+              {theme === "dark" ? "☀️ Light" : "🌙 Dark"}
+            </button>
           </div>
         </div>
       </section>

@@ -44,7 +44,7 @@ const NewSubscriptions = () => {
         message: "Please enter amount and service name",
         type: "error",
       });
-      console.log("error triggered");
+  
       return;
     }
     if (id) {

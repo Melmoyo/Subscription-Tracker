@@ -23,7 +23,7 @@ const SubscriptionCard = ({ data }: { data: SubscriptionProps }) => {
           setSelectedSub(data.id);
         }}
         style={{ borderTopColor: data.color ?? "#2dd4bf" }}
-        className={`border border-border rounded-lg p-4 max-w-xs bg-bg2  transition-transform duration-300 ease-in-out hover:translate-y-2   border-2 shadow-inner`}
+        className={`border border-border rounded-lg p-4 max-w-lg bg-bg2  transition-transform duration-300 ease-in-out hover:translate-y-2   border-2 shadow-inner`}
       >
         <div className="flex gap-4">
           <span className="w-6 h-6">{data.logo} </span>

@@ -13,7 +13,6 @@ type SubscriptionContextType = {
 const SubscriptionContext = createContext<SubscriptionContextType | null>(null);
 export function SubscriptionProvider({ children }: { children: ReactNode }) {
   const [subscriptions, setSubscriptions] = useState<Subscription[]>(MOCK_SUBS);
-
   const [selectedSub, setSelectedSub] = useState<string | null>(null);
 
   return (

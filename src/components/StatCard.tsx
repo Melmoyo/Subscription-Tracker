@@ -20,7 +20,7 @@ const StatCard = ({
   return (
     <>
       <article
-        className={`border border-border rounded-lg p-4 max-w-xs bg-bg2  border-t-${borderStyle} border-2 shadow-inner`}
+        className={`border border-border rounded-lg p-4 max-w-lg overflow-hidden bg-bg2  border-t-${borderStyle} border-2 shadow-inner`}
       >
         <h3 className="text-text2 text-xsm uppercase font-Syne">{title}</h3>
         <p

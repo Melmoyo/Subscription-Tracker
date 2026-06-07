@@ -10,6 +10,7 @@ type NotificationContextType = {
   notificationsEnabled: boolean;
   toggleNotifications: () => void;
 };
+const STORAGE_KEY = "notificationsEnabled";
 const NotificationContext = createContext<NotificationContextType | null>(null);
 export function NotificationContextProvider({
   children,
@@ -17,9 +18,17 @@ export function NotificationContextProvider({
   children: ReactNode;
 }) {
   const [notification, setNotification] = useState<Notification | null>(null);
-  const [notificationsEnabled, setNotificationsEnabled] = useState(true);
+  const [notificationsEnabled, setNotificationsEnabled] = useState(() => {
+    const storedNotif = localStorage.getItem(STORAGE_KEY);
+    if (storedNotif === null) return true;
+    return JSON.parse(storedNotif);
+  });
   const toggleNotifications = () => {
-    setNotificationsEnabled((prev) => !prev);
+    setNotificationsEnabled((prev: boolean) => {
+      const next = !prev;
+      localStorage.setItem("notificationsEnabled", JSON.stringify(next));
+      return next;
+    });
   };
   const showNotification = (notification: Notification) => {
     if (!notificationsEnabled) return;

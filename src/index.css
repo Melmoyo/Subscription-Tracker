@@ -50,12 +50,34 @@
   display: grid;
   grid-template-columns: 220px 1fr; /* sidebar + main columns */
   grid-template-rows: auto 1fr;
-  grid-template-areas: "sidebar topbar" "sidebar main";
-  min-height: 100vh;
+  grid-template-areas: "sidebar topbar " "sidebar main";
+  height: 100vh;
+  overflow: hidden;
 }
 .sidebar {
   grid-area: sidebar;
 }
 .topbar {
   grid-area: topbar;
+}
+.main {
+  grid-area: main;
+  overflow-y: auto;
+}
+/* Mobile */
+@media (max-width: 768px) {
+  .homepage {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas: "topbar" "main" "sidebar";
+  }
+
+  .sidebar {
+    overflow-y: visible;
+  }
+
+  .main {
+    overflow-y: auto;
+    padding-bottom: 0;
+  }
 }
